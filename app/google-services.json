@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "996463921575",
+    "project_id": "mood-18c07",
+    "storage_bucket": "mood-18c07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996463921575:android:213e5041fc659366688e82",
+        "android_client_info": {
+          "package_name": "com.example.hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "996463921575-o8g7tne9qmtof2g5e5a3g3usv0r9lcle.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqxhqkyj_vKUpeI7zKpM9YDRen6wZcg_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "996463921575-o8g7tne9qmtof2g5e5a3g3usv0r9lcle.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
