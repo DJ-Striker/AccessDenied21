@@ -48,18 +48,19 @@
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485"
         app:srcCompat="@drawable/sentiment_neutral_24px" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="134dp"
         android:layout_height="111dp"
+        android:onClick="happy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
         app:srcCompat="@drawable/sentiment_satisfied_alt_24px" />
 
     <ImageView
