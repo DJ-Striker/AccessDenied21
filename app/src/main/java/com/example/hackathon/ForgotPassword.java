@@ -37,7 +37,7 @@ public class ForgotPassword extends AppCompatActivity {
                     emailIDreset.requestFocus();
                 }
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    emailIDreset.setError("Please enter a valid email!");
+                    emailIDreset.setError("Please enter a email!");
                     emailIDreset.requestFocus();
                 }
                 mFirebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {

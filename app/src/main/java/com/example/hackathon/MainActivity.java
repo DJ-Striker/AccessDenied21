@@ -1,87 +1,38 @@
 package com.example.hackathon;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-
-import es.dmoral.toasty.Toasty;
+import android.os.Handler;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    public EditText emailId, password;
-    Button btnSignUp;
-    TextView tvSignIn;
-    FirebaseAuth mFirebaseAuth;
 
+    private static int SPLASH_SCREEN = 3000;
+    Animation topAnim;
+    ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        logo = findViewById(R.id.imageView9);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        emailId = findViewById(R.id.editTextTextEmailAddress);
-        password = findViewById(R.id.editTextTextPassword);
-        btnSignUp = findViewById(R.id.button);
-        tvSignIn = findViewById(R.id.textView);
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        logo.setAnimation(topAnim);
+
+
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-               String email = emailId.getText().toString();
-               String pwd = password.getText().toString();
-               if(email.isEmpty()){
-                   emailId.setError("Please enter email ID");
-                   emailId.requestFocus();
-               }
-               else if(pwd.isEmpty()){
-                   password.setError("Please enter password");
-                   password.requestFocus();
-               }
-               else if(email.isEmpty() && pwd.isEmpty()){
-                   Toasty.error(MainActivity.this, "Fields Are Empty!", Toast.LENGTH_SHORT).show();
-
-               }
-               else if(!(email.isEmpty() && pwd.isEmpty())){
-                   mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                       @Override
-                       public void onComplete(@NonNull Task<AuthResult> task) {
-                           if(!task.isSuccessful()){
-                               Toasty.error(MainActivity.this, "Sign Up was Unsuccessful, Please Try Again", Toast.LENGTH_SHORT).show();
-
-                           }
-                           else {
-                                startActivity(new Intent(MainActivity.this, HomeActivity.class));
-
-                           }
-                       }
-                   });
-               }
-               else{
-                   Toasty.error(MainActivity.this, "Error Occurred,Sorry!", Toast.LENGTH_SHORT).show();
-
-               }
-
+            public void run() {
+                Intent intent = new Intent(MainActivity.this, SignUp.class);
+                startActivity(intent);
+                finish();
             }
-        });
-
-        tvSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(i);
-
-            }
-        });
+        },SPLASH_SCREEN);
     }
 }

@@ -48,9 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(i);
                 }
-                else{
-                    Toasty.info(LoginActivity.this, "Please Login", Toast.LENGTH_SHORT).show();
-                }
+
             }
         };
 
@@ -105,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intSignUp = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intSignUp = new Intent(LoginActivity.this, SignUp.class);
                 startActivity(intSignUp);
             }
         });
