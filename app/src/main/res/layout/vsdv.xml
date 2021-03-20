@@ -3,15 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="#B7EBF6">
+
+    app:cardCornerRadius="60dp"
+    app:cardElevation="50dp"
+
+    >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="0dp"
-        android:background="#B7EBF6"
+        android:background="@drawable/roundedlayout"
+
         android:orientation="vertical"
         android:paddingTop="0dp"
+
         android:paddingBottom="0dp">
 
 
@@ -24,11 +30,11 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="382dp"
             android:layout_height="wrap_content"
             android:padding="25dp"
-            android:textSize="25dp"
-            android:textAppearance="?attr/textAppearanceHeadline6" />
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textSize="25dp" />
 
 
     </LinearLayout>

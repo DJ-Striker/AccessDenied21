@@ -50,6 +50,30 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void medium(View view){
+        ImageView hap=findViewById(R.id.imageView2);
+        hap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivitysadmedium();
+            }
+        });
+    }
+
+    public void sad(View view){
+        ImageView hap=findViewById(R.id.imageView4);
+        hap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivitysadmedium();
+            }
+        });
+    }
+
+    public void openActivitysadmedium(){
+        Intent intent=new Intent(this,sadmediummoodmain.class);
+        startActivity(intent);
+    }
 
     
 }
