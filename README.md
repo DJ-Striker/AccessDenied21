@@ -5,3 +5,7 @@
 
 
 -We have also used The AndroidX feature ‘CardView’ to create a scrollable list of the different tunes the user can listen to. We hope to further improve upon the app by creating a personalized messaging system using API’s so that the user gets a displayed list of quotes to improve their mood and have a more personalized experience.
+
+
+
+![title2](https://user-images.githubusercontent.com/71600359/111871325-5b9e4500-899a-11eb-8724-7e552a6e085b.png)
