@@ -1,11 +1,15 @@
 package com.example.hackathon;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -43,6 +47,8 @@ public class MusicPlayer extends AppCompatActivity {
 
         final ArrayList<Integer> songs = new ArrayList<>();
         songs.add(0, R.raw.alone);
+        songs.add(1, R.raw.dont_play);
+        songs.add(2, R.raw.friends);
 
 
         mMediaPlayer = MediaPlayer.create(getApplicationContext(), songs.get(currentIndex));
@@ -75,6 +81,7 @@ public class MusicPlayer extends AppCompatActivity {
             public void onClick(View v) {
                 mSeekBarTime.setMax(mMediaPlayer.getDuration());
                 if (mMediaPlayer != null && mMediaPlayer.isPlaying()){
+                    mMediaPlayer.pause();
                     play.setImageResource(R.drawable.ic_play);
                 }
                 else{
@@ -115,19 +122,52 @@ public class MusicPlayer extends AppCompatActivity {
                     play.setImageResource(R.drawable.ic_pause);
                 }
                 if (currentIndex > 0){
-
+                    currentIndex--;
                 }
+                else{
+                    currentIndex = songs.size() - 1;
+                }
+                if(mMediaPlayer.isPlaying()){
+                    mMediaPlayer.stop();
+                }
+                mMediaPlayer = MediaPlayer.create(getApplicationContext(), songs.get(currentIndex));
+                mMediaPlayer.start();
+                songDetails();
+            }
+        });
+
+        mSeekBarTime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(fromUser){
+                    mMediaPlayer.seekTo(progress);
+                    mSeekBarTime.setProgress(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
     }
 
     private void songDetails(){
         if(currentIndex == 0){
-            songTitle.setText(" TEST ");
+            songTitle.setText(" Alone - Marshmellow ");
             imageView.setImageResource(R.drawable.music_record);
         }
         if(currentIndex == 1){
-            songTitle.setText(" TEST 2 ");
+            songTitle.setText(" Don't Play - KSI x Anne Marie x Digital Farm Animals ");
+            imageView.setImageResource(R.drawable.music_record);
+        }
+        if(currentIndex == 2){
+            songTitle.setText(" FRIENDS - Anne Marie x Marshmallow ");
             imageView.setImageResource(R.drawable.music_record);
         }
         mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -137,5 +177,32 @@ public class MusicPlayer extends AppCompatActivity {
                 mMediaPlayer.start();
             }
         });
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (mMediaPlayer != null){
+                    try{
+                        if(mMediaPlayer.isPlaying()){
+                            Message message = new Message();
+                            message.what = mMediaPlayer.getCurrentPosition();
+                            handler.sendMessage(message);
+                            Thread.sleep(1000);
+                        }
+                    }catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }).start();
+
     }
+    @SuppressLint("HandlerLeak")
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            mSeekBarTime.setProgress(msg.what);
+        }
+    };
 }

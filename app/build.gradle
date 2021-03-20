@@ -12,9 +12,13 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+
 
     buildTypes {
         release {
@@ -41,6 +45,7 @@ dependencies {
     implementation 'com.github.GrenderG:Toasty:1.1.2'
     implementation 'androidx.recyclerview:recyclerview-selection:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.multidex:multidex:1.0.3'
 
 }
 
