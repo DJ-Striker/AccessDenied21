@@ -15,7 +15,7 @@
         <activity android:name=".sadmediummoodmain" />
         <activity android:name=".SignUp" />
         <activity android:name=".LoginActivity" />
-
+        <activity android:name=".MusicPlayer"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
