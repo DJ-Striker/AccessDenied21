@@ -38,10 +38,12 @@ public class MusicPlayer extends AppCompatActivity {
         mSeekBarTime = findViewById(R.id.seek_bar);
         mSeekBarVol = findViewById(R.id.bar_volume);
 
+
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Integer> songs = new ArrayList<>();
-        songs.add(0, R.raw.Dont_Play);
+        songs.add(0, R.raw.alone);
+
 
         mMediaPlayer = MediaPlayer.create(getApplicationContext(), songs.get(currentIndex));
 
