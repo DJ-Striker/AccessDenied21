@@ -21,7 +21,7 @@ public class MusicPlayer extends AppCompatActivity {
     static MediaPlayer mMediaPlayer;
     private Runnable runnable;
     private AudioManager mAudioManager;
-    int CurrentIndex = 0;
+    int currentIndex = 0;
 
 
     @Override
@@ -41,7 +41,9 @@ public class MusicPlayer extends AppCompatActivity {
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Integer> songs = new ArrayList<>();
-        songs.add(0, R.raw.);
+        songs.add(0, R.raw.Dont_Play);
+
+        mMediaPlayer = MediaPlayer.create(getApplicationContext(), songs.get(currentIndex));
 
         int maxV = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         int curV = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
@@ -110,7 +112,9 @@ public class MusicPlayer extends AppCompatActivity {
                 if(mMediaPlayer != null){
                     play.setImageResource(R.drawable.ic_pause);
                 }
-                if (currentIndex > 0)
+                if (currentIndex > 0){
+
+                }
             }
         });
     }
