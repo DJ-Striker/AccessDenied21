@@ -14,6 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import es.dmoral.toasty.Toasty;
+
 public class ForgotPassword extends AppCompatActivity {
     public EditText emailIDreset;
     public Button reset;
@@ -45,10 +47,10 @@ public class ForgotPassword extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
 
                         if (task.isSuccessful()){
-                            Toast.makeText(ForgotPassword.this, "Check your email to reset your password!", Toast.LENGTH_SHORT).show();
+                            Toasty.info(ForgotPassword.this, "Check your email to reset your password!", Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Toast.makeText(ForgotPassword.this, "Error Occured. Try Again!", Toast.LENGTH_SHORT).show();
+                            Toasty.error(ForgotPassword.this, "Error Occured. Try Again!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

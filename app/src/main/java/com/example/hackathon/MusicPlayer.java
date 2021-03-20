@@ -46,9 +46,9 @@ public class MusicPlayer extends AppCompatActivity {
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Integer> songs = new ArrayList<>();
-        songs.add(0, R.raw.alone);
-        songs.add(1, R.raw.dont_play);
-        songs.add(2, R.raw.friends);
+        songs.add(0, R.raw.wave1);
+        songs.add(1, R.raw.wave2);
+        songs.add(2, R.raw.wave3);
 
 
         mMediaPlayer = MediaPlayer.create(getApplicationContext(), songs.get(currentIndex));
@@ -98,7 +98,7 @@ public class MusicPlayer extends AppCompatActivity {
             public void onClick(View v) {
                 if (mMediaPlayer != null){
 
-                    play.setImageResource(R.drawable.music_record);
+                    play.setImageResource(R.drawable.capture);
                 }
                 if (currentIndex < songs.size() - 1){
                     currentIndex ++;
@@ -159,16 +159,16 @@ public class MusicPlayer extends AppCompatActivity {
 
     private void songDetails(){
         if(currentIndex == 0){
-            songTitle.setText(" Alone - Marshmellow ");
-            imageView.setImageResource(R.drawable.music_record);
+            songTitle.setText("Sound of the waves");
+            imageView.setImageResource(R.drawable.kalippan);
         }
         if(currentIndex == 1){
-            songTitle.setText(" Don't Play - KSI x Anne Marie x Digital Farm Animals ");
-            imageView.setImageResource(R.drawable.music_record);
+            songTitle.setText("Hawaiin delight");
+            imageView.setImageResource(R.drawable.kalippan);
         }
         if(currentIndex == 2){
-            songTitle.setText(" FRIENDS - Anne Marie x Marshmallow ");
-            imageView.setImageResource(R.drawable.music_record);
+            songTitle.setText("vibey waves");
+            imageView.setImageResource(R.drawable.kalippan);
         }
         mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override

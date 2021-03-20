@@ -7,22 +7,6 @@
     android:background="@drawable/google_pixel_2_xl___4"
     tools:context=".sadmediummoodmain">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleview"
-        android:layout_width="443dp"
-
-        android:layout_height="299dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginEnd="45dp"
-        android:layout_marginRight="45dp"
-        android:background="@drawable/roundedlayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="400dp"
@@ -32,7 +16,7 @@
         android:layout_marginTop="128dp"
         android:layout_marginEnd="227dp"
         android:layout_marginRight="227dp"
-        android:text="Choose from one of the tones below to cheer yourself up!"
+        android:text="Click on any of the below image choices to lighten your mood app!"
         android:textColor="#072F5F"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,19 +26,101 @@
 
     <EditText
         android:id="@+id/editteeect"
-        android:layout_width="344dp"
-        android:layout_height="133dp"
+        android:layout_width="348dp"
+        android:layout_height="67dp"
         android:layout_marginStart="162dp"
         android:layout_marginLeft="162dp"
         android:layout_marginEnd="218dp"
         android:layout_marginRight="218dp"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="84dp"
         android:gravity="center"
         android:hint="Write down whats bothering you here"
         android:textColor="#072F5F"
         android:textColorHint="#072F5F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="198dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="13dp"
+        android:onClick="foresty"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@drawable/avenue_815297_1920" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="168dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:text="Indulge yourself into the calming and soothing sound of the forest to realise that sometimes,taking a step back and relaxing is what really matters in life sometimes"
+        android:textColor="#072F5F"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="198dp"
+        android:layout_height="105dp"
+        android:onClick="firey"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/fire_123784_1920" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="164dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:onClick="wavey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/capture" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="168dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Clear your mind of unwanted and unnecessary thoughts by giving your ears some relaxing and calm sound of the fire to warm your soul and body"
+        android:textColor="#072F5F"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="164dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="24dp"
+        android:text="The sound and rhythm of ocean waves and tides coming in and out can affect the rhythm of the neuronal “waves” in our brain, encouraging a more peaceful pace of thought.Enjoy yourself"
+        android:textColor="#072F5F"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,13 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".ForgotPassword"></activity>
+        <activity android:name=".musicplayerforfirey"></activity>
+        <activity android:name=".musicplayerforforesty" />
+        <activity android:name=".ForgotPassword" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".ifhappy" />
         <activity android:name=".sadmediummoodmain" />
         <activity android:name=".SignUp" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MusicPlayer"/>
+        <activity android:name=".MusicPlayer" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
