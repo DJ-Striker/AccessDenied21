@@ -32,52 +32,36 @@
         android:layout_marginLeft="162dp"
         android:layout_marginEnd="218dp"
         android:layout_marginRight="218dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="80dp"
         android:gravity="center"
         android:hint="Write down whats bothering you here"
         android:textColor="#072F5F"
         android:textColorHint="#072F5F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="198dp"
         android:layout_height="105dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="44dp"
         android:onClick="foresty"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:srcCompat="@drawable/avenue_815297_1920" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="168dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:text="Indulge yourself into the calming and soothing sound of the forest to realise that sometimes,taking a step back and relaxing is what really matters in life sometimes"
-        android:textColor="#072F5F"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="198dp"
         android:layout_height="105dp"
-        android:onClick="firey"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
+        android:onClick="firey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:srcCompat="@drawable/fire_123784_1920" />
@@ -88,7 +72,7 @@
         android:layout_height="111dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:onClick="wavey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
@@ -100,11 +84,12 @@
         android:layout_height="99dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:text="Clear your mind of unwanted and unnecessary thoughts by giving your ears some relaxing and calm sound of the fire to warm your soul and body"
         android:textColor="#072F5F"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -114,7 +99,7 @@
         android:layout_height="122dp"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="The sound and rhythm of ocean waves and tides coming in and out can affect the rhythm of the neuronal “waves” in our brain, encouraging a more peaceful pace of thought.Enjoy yourself"
         android:textColor="#072F5F"
         android:textSize="12sp"
@@ -122,5 +107,22 @@
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="168dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:text="Indulge yourself into the calming and soothing sound of the forest to realise that sometimes,taking a step back and relaxing is what really matters in life sometimes"
+        android:textColor="#072F5F"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
