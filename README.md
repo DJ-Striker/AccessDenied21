@@ -3,9 +3,6 @@
 
 -Our backend is developed using Firebase for the credential system. We intend to and are working on expanding how much we are implementing Firebase by storing the Music in the FireStore database. 
 
-
--We have also used The AndroidX feature ‘CardView’ to create a scrollable list of the different tunes the user can listen to. We hope to further improve upon the app by creating a personalized messaging system using API’s so that the user gets a displayed list of quotes to improve their mood and have a more personalized experience.
-
 In order to install and view the entire code:
 1.Click on the zip file on the top right.
 2.Extract it
